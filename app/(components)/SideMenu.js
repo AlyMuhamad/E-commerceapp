@@ -48,7 +48,7 @@ function SideMenu() {
         {cartProducts.map(
           productData =>
             productInCart && (
-              <div key={productData.id}>
+              <div key={productData.id} className={styles.productDetails}>
                 <Image
                   src={productData.image}
                   alt="a product"
@@ -56,17 +56,17 @@ function SideMenu() {
                   height={75}
                   priority
                 />
-                <p>{productData.title}</p>
+                <p className={styles.productTitle}>{productData.title}</p>
                 <p>{productData.price} $</p>
-                <p>{productAmount}</p>
-                {/* <button
+                <button
+                  className={styles.removeBtn}
                   onClick={() => {
                     // dispatch(remove(productData));
                     handleDeleteProduct(productData);
                   }}
                 >
-                  {productData.id}
-                </button> */}
+                  remove from cart
+                </button>
               </div>
             )
         )}

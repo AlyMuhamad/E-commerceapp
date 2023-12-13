@@ -79,6 +79,7 @@ function Shop() {
                   <BsShuffle style={style} />
                 </div>
               )}
+
               <Link className={styles.title} href={`shop/${product.id}`}>
                 {product.title}
               </Link>

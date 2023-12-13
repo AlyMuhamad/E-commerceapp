@@ -3,12 +3,15 @@
   flex-direction: column;
   height: 100%;
   margin: 20px;
+  justify-items: flex-start;
+  /* align-items: flex-start; */
 }
 
 .landingBody,
 .landingText {
   display: flex;
   align-items: center;
+  line-height: 1.2;
 }
 
 .landingBody {
@@ -17,8 +20,11 @@
 }
 
 .landingText {
+  justify-content: flex-start;
+  justify-self: flex-start;
+  /* align-items: flex-start; */
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .headline {
@@ -26,8 +32,12 @@
   font-weight: 900;
 }
 
+.girl {
+  /* border: 3px solid black; */
+}
+
 .btn {
-  background-color: black;
+  background-color: #e11d48;
   padding: 15px 40px;
   display: inline-block;
   text-decoration: none;
@@ -36,20 +46,24 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 1000;
   transition: all 0.3s;
 }
 
 .btn:hover {
   color: black;
   background-color: #f2f2f2;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .footer {
   display: flex;
   list-style-type: none;
   gap: 16px;
-  text-decoration: none;
   font-size: 16px;
+}
+
+.category {
+  text-decoration: none;
+  color: black;
 }

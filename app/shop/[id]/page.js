@@ -48,12 +48,19 @@ function Product() {
           <p className={styles.productTitle}>{productData.title}</p>
           <p>{productData.price} $</p>
         </div>
-        <Link href="/">Buy Now</Link>
-        <button onClick={() => handleProduct(productData)}>
-          {addedProduct && productInCart
-            ? 'remove from my cart'
-            : 'Add to my cart'}
-        </button>
+        <div className={styles.buttons}>
+          <button
+            className={styles.addBtn}
+            onClick={() => handleProduct(productData)}
+          >
+            {addedProduct && productInCart
+              ? 'remove from my cart'
+              : 'Add to my cart'}
+          </button>
+          <Link href="/" className={styles.buyBtn}>
+            Buy Now
+          </Link>
+        </div>
         <p className={styles.productDescription}>{productData.description}</p>
         {/* <p>{productData.rating.rate}</p> */}
       </div>

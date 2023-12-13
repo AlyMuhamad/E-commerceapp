@@ -10,9 +10,17 @@
   list-style-type: none;
   gap: 16px;
   font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .link {
   text-decoration: none;
+  color: black;
+  padding: 12px;
+}
+
+.link:hover {
+  /* background-color: #94a3b8; */
 }
 
 .icons {
@@ -33,12 +41,15 @@
 }
 
 .productsInCart {
-  font-size: 10px;
-  background-color: rgb(28, 195, 111);
-  padding: 6px;
-  /* margin: 5px; */
+  font-size: 12px;
+  background-color: #f43f5e;
+  padding: 1px;
+  color: white;
   border-radius: 50%;
   z-index: 2;
   text-align: center;
+  text-justify: distribute;
   position: absolute;
+  height: 20px;
+  width: 20px;
 }

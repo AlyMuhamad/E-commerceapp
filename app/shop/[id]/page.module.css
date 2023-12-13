@@ -22,3 +22,29 @@
 .productDescription {
   line-height: 1.4;
 }
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.addBtn,
+.buyBtn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.addBtn {
+  background-color: #94a3b8;
+}
+
+.buyBtn {
+  background-color: #e11d48;
+}

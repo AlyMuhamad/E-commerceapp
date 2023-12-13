@@ -32,12 +32,21 @@ export default function Home() {
           <footer className={styles.footer}>
             {links.map(link => (
               <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href} className={styles.category}>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </footer>
         </div>
-        <Image src={image} alt="a girl" width={500} height={750} priority />
+        <Image
+          src={image}
+          alt="a girl"
+          width={500}
+          height={750}
+          className={styles.girl}
+          priority
+        />
       </div>
     </main>
   );
