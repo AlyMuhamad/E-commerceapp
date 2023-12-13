@@ -18,9 +18,9 @@ function Product() {
     return store.cart.productInCart;
   });
 
-  function handleProduct(id) {
+  function handleProduct(productData) {
     setAddedProduct(!addedProduct);
-    addedProduct ? dispatch(remove(id)) : dispatch(add(id));
+    addedProduct ? dispatch(remove(productData)) : dispatch(add(productData));
   }
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function Product() {
           <p>{productData.price} $</p>
         </div>
         <Link href="/">Buy Now</Link>
-        <button onClick={() => handleProduct(productData.id)}>
+        <button onClick={() => handleProduct(productData)}>
           {addedProduct && productInCart
             ? 'remove from my cart'
             : 'Add to my cart'}

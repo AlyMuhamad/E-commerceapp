@@ -1,7 +1,8 @@
 'use client';
 //the products cart
 const initialState = {
-  id: null,
+  // id: null,
+  cartProducts: [],
   productsInCart: 0,
   showCart: false,
   productInCart: false,
@@ -23,7 +24,8 @@ export default function reducerCart(state = initialState, action) {
     case 'cart/add':
       return {
         ...state,
-        id: action.payload,
+        // id: action.payload,
+        cartProducts: [action.payload, ...state.cartProducts],
         productsInCart: state.productsInCart + 1,
         productAmount: state.productAmount,
         productInCart: true,
@@ -32,7 +34,10 @@ export default function reducerCart(state = initialState, action) {
     case 'cart/remove':
       return {
         ...state,
-        id: action.payload.id,
+        // id: action.payload.id,
+        cartProducts: state.cartProducts.filter(
+          product => product.id !== action.payload.id
+        ),
         productsInCart: state.productsInCart - 1,
         productAmount: state.productAmount,
         productInCart: false,
@@ -57,21 +62,18 @@ export function hide() {
   };
 }
 
-export function add(id) {
+export function add(product) {
   return {
     type: 'cart/add',
-    payload: id,
+    payload: product,
   };
 }
-export function remove(id) {
+export function remove(product) {
   return {
     type: 'cart/remove',
-    payload: id,
+    payload: product,
   };
 }
-
-// store.dispatch(add(product.Id));
-// store.dispatch(remove(product.Id));
 
 //the components updating this cart
 // incresing the number of products and passing the id
