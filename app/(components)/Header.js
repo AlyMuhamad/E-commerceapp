@@ -63,14 +63,14 @@ function Header() {
       </div>
 
       <div className={styles.icons}>
-        <div className={styles.cart}>
+        <div className={styles.cart} onClick={() => handleCart()}>
           {/* {productsInCart > 0 ? (
             <div className={styles.productsInCart}>{productsInCart}</div>
           ) : (
             ''
           )} */}
           <div className={styles.productsInCart}>{productsInCart}</div>
-          <BsCart3 style={style} onClick={() => handleCart()} />
+          <BsCart3 style={style} />
         </div>
         <BsMenuButtonWideFill style={style} />
       </div>
