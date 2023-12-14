@@ -5,9 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 //the products cart
 const initialState = {
   cartProducts: [],
-  productsInCart: 0,
-  showCart: false,
-  // productAmount: 0,
+  amount: 1,
 };
 
 const cartSlice = createSlice({
@@ -24,16 +22,14 @@ const cartSlice = createSlice({
 
     add(state, action) {
       state.cartProducts = [action.payload, ...state.cartProducts];
-      state.productsInCart = state.productsInCart + 1;
-      // state.productAmount = state.productAmount;
+      state.amount = state.amount;
     },
 
     remove(state, action) {
       state.cartProducts = state.cartProducts.filter(
         product => product.id !== action.payload.id
       );
-      state.productsInCart = state.productsInCart - 1;
-      // state.productAmount = state.productAmount;
+      state.amount = state.amount;
     },
   },
 });

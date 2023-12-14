@@ -12,12 +12,21 @@ function Product() {
   const { id } = useParams();
   const [productData, setProductData] = useState({});
   const [addedProduct, setAddedProduct] = useState(false);
+  const [amount, setAmount] = useState(1);
 
   const dispatch = useDispatch();
 
   const productInCart = useSelector(store => {
     return store.cart.productInCart;
   });
+
+  function handleDescreaseAmount() {
+    if (amount <= 1) return;
+    setAmount(() => amount - 1);
+  }
+  function handleIncreaseAmount() {
+    setAmount(() => amount + 1);
+  }
 
   function handleProduct(productData) {
     setAddedProduct(!addedProduct);
@@ -53,14 +62,25 @@ function Product() {
           <p className={styles.productTitle}>{productData.title}</p>
           <p>{productData.price} $</p>
         </div>
+        <div className={styles.amount}>
+          <button className={styles.amountBtn} onClick={handleDescreaseAmount}>
+            -
+          </button>
+          <div className={styles.amountNum}>{amount}</div>
+          <button
+            className={styles.amountBtn}
+            onClick={() => handleIncreaseAmount()}
+          >
+            +
+          </button>
+        </div>
+
         <div className={styles.buttons}>
           <button
             className={styles.addBtn}
             onClick={() => handleProduct(productData)}
           >
-            {addedProduct && productInCart
-              ? 'remove from my cart'
-              : 'Add to my cart'}
+            {addedProduct ? 'remove from my cart' : 'Add to my cart'}
           </button>
           <Link href="/" className={styles.buyBtn}>
             Buy Now

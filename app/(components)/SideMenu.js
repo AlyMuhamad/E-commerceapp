@@ -33,7 +33,6 @@ function SideMenu() {
   function handleDeleteProduct(productData) {
     dispatch(remove(productData));
   }
-  console.log(cartProducts);
 
   if (!showCart) return;
   if (showCart)

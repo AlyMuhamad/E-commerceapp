@@ -34,14 +34,12 @@ const style = {
 };
 
 function Header() {
-  // const [productsInCart, setProductsInCart] = useState(null);
-  // const [showCart, setShowCart] = useState(false);
   // const [showMenu, setShowMenu] = useState(false);
 
   const dispatch = useDispatch();
 
-  const productsInCart = useSelector(store => {
-    return store.cart.productsInCart;
+  const cartProducts = useSelector(store => {
+    return store.cart.cartProducts;
   });
 
   function handleCart() {
@@ -63,12 +61,12 @@ function Header() {
 
       <div className={styles.icons}>
         <div className={styles.cart} onClick={() => handleCart()}>
-          {/* {productsInCart > 0 ? (
-            <div className={styles.productsInCart}>{productsInCart}</div>
+          {/* {cartProducts.length > 0 ? (
+            <div className={styles.productsInCart}>{cartProducts.length}</div>
           ) : (
             ''
           )} */}
-          <div className={styles.productsInCart}>{productsInCart}</div>
+          <div className={styles.productsInCart}>{cartProducts.length}</div>
           <BsCart3 style={style} />
         </div>
         <BsMenuButtonWideFill style={style} />
