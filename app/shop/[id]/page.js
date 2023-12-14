@@ -87,6 +87,10 @@ function Product() {
           </Link>
         </div>
         <div className={styles.productDetails}>
+          <div className={styles.categoryDetails}>
+            <p>Category</p>
+            <p>{productData.category}</p>
+          </div>
           <div className={styles.descriptionDetails}>
             <p>Description</p>
             <p className={styles.productDescription}>

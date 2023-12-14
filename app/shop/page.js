@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { hide } from '../(features)/cartSlice';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 const style = {
   backgroundColor: '#fda4af',
@@ -28,7 +29,10 @@ function Shop() {
   const [pageDisplayed, setPageDisplayed] = useState(1);
 
   const dispatch = useDispatch();
-  // let showProductOptions = false;
+
+  // const { id } = useSearchParams();
+  // const { pathname } = useRouter();
+  // console.log(pathname);
 
   function handleProductOptions(id) {
     setShowProductOptions(!showProductOptions);
@@ -51,22 +55,29 @@ function Shop() {
     products();
   }, []);
 
+  // className={`${styles.description} ${styles.yellow}`}
+
   return (
     <div className={styles.shoppingPage} onClick={() => handleCart()}>
       <ul className={styles.shoppingCategories}>
         <li>
-          <Link href="/contact" className={styles.category}>
+          <Link href="/shop" className={styles.category}>
             All
           </Link>
         </li>
         <li>
-          <Link href="/blog" className={styles.category}>
-            All
+          <Link href="/shop/men" className={styles.category}>
+            Men
           </Link>
         </li>
         <li>
-          <Link href="/" className={styles.category}>
-            All
+          <Link href="/shop/jewelery" className={styles.category}>
+            Jewels
+          </Link>
+        </li>
+        <li>
+          <Link href="/shop/electronics" className={styles.category}>
+            Electronics
           </Link>
         </li>
       </ul>
