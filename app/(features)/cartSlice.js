@@ -1,79 +1,46 @@
 'use client';
+
+import { createSlice } from '@reduxjs/toolkit';
+
 //the products cart
 const initialState = {
-  // id: null,
   cartProducts: [],
   productsInCart: 0,
   showCart: false,
-  productInCart: false,
-  productAmount: 0,
+  // productAmount: 0,
 };
 
-export default function reducerCart(state = initialState, action) {
-  switch (action.type) {
-    case 'cart/show':
-      return {
-        ...state,
-        showCart: true,
-      };
-    case 'cart/hide':
-      return {
-        ...state,
-        showCart: false,
-      };
-    case 'cart/add':
-      return {
-        ...state,
-        // id: action.payload,
-        cartProducts: [action.payload, ...state.cartProducts],
-        productsInCart: state.productsInCart + 1,
-        productAmount: state.productAmount,
-        productInCart: true,
-      };
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState,
+  reducers: {
+    show(state) {
+      state.showCart = true;
+    },
 
-    case 'cart/remove':
-      return {
-        ...state,
-        // id: action.payload.id,
-        cartProducts: state.cartProducts.filter(
-          product => product.id !== action.payload.id
-        ),
-        productsInCart: state.productsInCart - 1,
-        productAmount: state.productAmount,
-        productInCart: false,
-      };
+    hide(state) {
+      state.showCart = false;
+    },
 
-    default:
-      return state;
-  }
-}
+    add(state, action) {
+      state.cartProducts = [action.payload, ...state.cartProducts];
+      state.productsInCart = state.productsInCart + 1;
+      // state.productAmount = state.productAmount;
+    },
 
-// action creators
+    remove(state, action) {
+      state.cartProducts = state.cartProducts.filter(
+        product => product.id !== action.payload.id
+      );
+      state.productsInCart = state.productsInCart - 1;
+      // state.productAmount = state.productAmount;
+    },
+  },
+});
 
-export function show() {
-  return {
-    type: 'cart/show',
-  };
-}
+export const { show, hide, add, remove } = cartSlice.actions;
 
-export function hide() {
-  return {
-    type: 'cart/hide',
-  };
-}
-
-export function add(product) {
-  return {
-    type: 'cart/add',
-    payload: product,
-  };
-}
-export function remove(product) {
-  return {
-    type: 'cart/remove',
-    payload: product,
-  };
-}
+export default cartSlice.reducer;
 
 //the components updating this cart
 // incresing the number of products and passing the id

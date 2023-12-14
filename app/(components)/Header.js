@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import { BsCart3, BsMenuButtonWideFill } from 'react-icons/bs';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { show } from '../(features)/cartSlice';
 

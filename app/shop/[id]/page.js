@@ -1,5 +1,5 @@
 'use client';
-import { add, remove } from '@/app/(features)/cartSlice';
+import { add, hide, remove } from '@/app/(features)/cartSlice';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -24,6 +24,10 @@ function Product() {
     addedProduct ? dispatch(remove(productData)) : dispatch(add(productData));
   }
 
+  function handleCart() {
+    dispatch(hide());
+  }
+
   useEffect(() => {
     async function products() {
       const res = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -34,7 +38,7 @@ function Product() {
   }, [id]);
 
   return (
-    <div className={styles.productPage}>
+    <div className={styles.productPage} onClick={() => handleCart()}>
       <div className={styles.product}>
         <div>
           <Image

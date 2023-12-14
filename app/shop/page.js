@@ -9,9 +9,12 @@ import styles from './page.module.css';
 import image2 from '(assets)/jc-gellidon-fnc3YCtCCOI-unsplash.jpg';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { hide } from '../(features)/cartSlice';
+import { useDispatch } from 'react-redux';
 
 const style = {
-  backgroundColor: '#9e9e',
+  backgroundColor: '#fda4af',
+  // color: 'white',
   padding: '10px',
   fontSize: '40px',
   borderRadius: '50%',
@@ -24,6 +27,7 @@ function Shop() {
 
   const [pageDisplayed, setPageDisplayed] = useState(1);
 
+  const dispatch = useDispatch();
   // let showProductOptions = false;
 
   function handleProductOptions(id) {
@@ -32,6 +36,10 @@ function Shop() {
   }
   function handleChangePage(event, value) {
     setPageDisplayed(value);
+  }
+
+  function handleCart() {
+    dispatch(hide());
   }
 
   useEffect(() => {
@@ -44,7 +52,7 @@ function Shop() {
   }, []);
 
   return (
-    <div className={styles.shoppingPage}>
+    <div className={styles.shoppingPage} onClick={() => handleCart()}>
       <ul className={styles.shoppingCategories}>
         <li>
           <Link href="/contact" className={styles.category}>
@@ -108,11 +116,6 @@ function Shop() {
             color="primary"
             onChange={handleChangePage}
           />
-
-          {/* Signature:
-function(event: React.ChangeEvent, page: number) => void
-event The event source of the callback.
-page The page selected. */}
         </Stack>
       </div>
     </div>

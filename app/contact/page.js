@@ -30,10 +30,11 @@ function Contact() {
       <div>
         <p className={styles.headline}>About Me</p>
         <p>
-          My name is Aly, a frontend developer based in Egypt. I am passionate
-          about anything related to web development. <br />
-          This is one of the projects that I recently created to help establish
-          me in this career. You can find on:
+          My name is Aly Mohamed, a frontend developer based in Egypt. I am
+          passionate about anything related to web development. This is one of
+          the projects that I recently created to help establish me in this
+          career. <br />
+          You can find on:
           <div className={styles.socialMedia}>
             <FaGithub style={style} />
             <FaTelegram style={style} />

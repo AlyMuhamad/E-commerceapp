@@ -1,12 +1,12 @@
 'use client';
 
-import { combineReducers, createStore } from 'redux';
 import reducerCart from './cartSlice';
+import { configureStore } from '@reduxjs/toolkit';
 
-const rootReducers = combineReducers({
-  cart: reducerCart,
+const store = configureStore({
+  reducer: {
+    cart: reducerCart,
+  },
 });
-
-const store = createStore(rootReducers);
 
 export default store;
