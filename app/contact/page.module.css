@@ -2,7 +2,10 @@
   margin: 40px 250px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 10px;
+  /* justify-content: start; */
+  /* justify-items: start; */
+  /* overflow: visible; */
 }
 
 .headline {
@@ -12,5 +15,59 @@
 .clientForm {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+}
+
+.formHeadline {
+  font-size: 24px;
+}
+
+.labelWithField {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 18px;
+  /* display: block; */
+}
+
+.field {
+  padding: 10px;
+  /* width: 100%; */
+}
+
+.lastName {
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.submit {
+  background-color: #94a3b8;
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.3s;
+}
+
+.inqueryResponse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.inquerBody {
+  resize: none;
+  /* margin-right: 5px; */
 }

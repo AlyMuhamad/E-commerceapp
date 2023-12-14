@@ -8,8 +8,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function SideMenu() {
-  // const [productsData, setProductsData] = useState([]);
-
   const dispatch = useDispatch();
 
   const showCart = useSelector(store => {
@@ -42,8 +40,8 @@ function SideMenu() {
     //   productData.filter(product => product.id !== id)
     // );
     dispatch(remove(productData));
-    console.log(productData);
   }
+  console.log(cartProducts);
 
   if (!showCart) return;
   if (showCart)
