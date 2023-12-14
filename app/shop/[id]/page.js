@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Rating } from '@mui/material';
 
 function Product() {
   const { id } = useParams();
@@ -61,8 +62,26 @@ function Product() {
             Buy Now
           </Link>
         </div>
-        <p className={styles.productDescription}>{productData.description}</p>
-        {/* <p>{productData.rating.rate}</p> */}
+        <div className={styles.productDetails}>
+          <div className={styles.descriptionDetails}>
+            <p>Description</p>
+            <p className={styles.productDescription}>
+              {productData.description}
+            </p>
+          </div>
+          <div className={styles.rateDetails}>
+            <p>Rate</p>
+            <div>
+              {/* <div>({productData.rating.rate})</div> */}
+              <Rating
+                name="read-only"
+                // value={productData.rating.rate}
+                precision={0.5}
+                readOnly
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

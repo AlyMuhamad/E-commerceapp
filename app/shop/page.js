@@ -22,11 +22,16 @@ function Shop() {
   const [showProductOptions, setShowProductOptions] = useState(false);
   const [productOfInterest, setProductOfInterest] = useState(null);
 
+  const [pageDisplayed, setPageDisplayed] = useState(1);
+
   // let showProductOptions = false;
 
   function handleProductOptions(id) {
     setShowProductOptions(!showProductOptions);
     setProductOfInterest(id);
+  }
+  function handleChangePage(event, value) {
+    setPageDisplayed(value);
   }
 
   useEffect(() => {
@@ -61,7 +66,17 @@ function Shop() {
 
       <div className={styles.shoppingCard}>
         {productsData
-          .filter(product => product.id < 5)
+          .filter(
+            product =>
+              product.id > pageDisplayed - 1 && product.id < pageDisplayed + 4
+          )
+          //   {
+          //   if (pageDisplayed === 1)
+          //     product.id > pageDisplayed - 1 && product.id < pageDisplayed + 4;
+          //   if (pageDisplayed === 2)
+          //     product.id > pageDisplayed + 2 && product.id < pageDisplayed + 45;
+          // }
+
           .map(product => (
             <li key={product.id} className={styles.product}>
               <Image
@@ -87,8 +102,17 @@ function Shop() {
             </li>
           ))}
         <Stack spacing={2}>
-          <Pagination count={5} color="primary" />
-          {/* <Pagination count={10} color="secondary" /> */}
+          <Pagination
+            count={10}
+            page={pageDisplayed}
+            color="primary"
+            onChange={handleChangePage}
+          />
+
+          {/* Signature:
+function(event: React.ChangeEvent, page: number) => void
+event The event source of the callback.
+page The page selected. */}
         </Stack>
       </div>
     </div>

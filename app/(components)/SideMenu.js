@@ -5,6 +5,7 @@ import styles from './SideMenu.module.css';
 import { add, hide, remove } from '../(features)/cartSlice';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function SideMenu() {
   // const [productsData, setProductsData] = useState([]);
@@ -31,11 +32,17 @@ function SideMenu() {
     dispatch(hide());
   }
 
+  const totalPrice = cartProducts.reduce(
+    (totalPrice, productData) => totalPrice + productData.price,
+    0
+  );
+
   function handleDeleteProduct(productData) {
     // setProductsData(productData =>
     //   productData.filter(product => product.id !== id)
     // );
     dispatch(remove(productData));
+    console.log(productData);
   }
 
   if (!showCart) return;
@@ -70,8 +77,23 @@ function SideMenu() {
               </div>
             )
         )}
+        {totalPrice > 0 ? (
+          <div className={styles.finalButtons}>
+            <div className={styles.totalPrice}>Total Price: {totalPrice} $</div>
+            <Link className={styles.paymentButton} href="/">
+              Proceed to pay
+            </Link>
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     );
 }
 
 export default SideMenu;
+// const initialValue = 0;
+// const sumWithInitial = array1.reduce(
+//   (accumulator, currentValue) => accumulator + currentValue,
+//   initialValue,
+// );

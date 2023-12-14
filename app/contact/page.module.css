@@ -1,0 +1,16 @@
+.contactPage {
+  margin: 40px 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.headline {
+  font-size: 32px;
+}
+
+.clientForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

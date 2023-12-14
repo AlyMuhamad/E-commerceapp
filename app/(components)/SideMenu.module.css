@@ -68,10 +68,30 @@
   color: white;
   text-align: center;
   position: relative;
-
   z-index: 1000;
   transition: all 0.3s;
 }
 
 .hideCart {
+}
+
+.finalButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.totalPrice {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+.paymentButton {
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  margin: 20px;
+  color: white;
+  background-color: #9f1239;
+  text-align: center;
 }
