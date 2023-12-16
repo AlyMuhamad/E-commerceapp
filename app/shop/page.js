@@ -6,12 +6,10 @@ import { BsCart3, BsShuffle } from 'react-icons/bs';
 import { MdOutlineSearch } from 'react-icons/md';
 import Image from 'next/image';
 import styles from './page.module.css';
-import image2 from '(assets)/jc-gellidon-fnc3YCtCCOI-unsplash.jpg';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { hide } from '../(features)/cartSlice';
 import { useDispatch } from 'react-redux';
-import { useRouter } from 'next/navigation';
 
 const style = {
   backgroundColor: '#fda4af',
@@ -81,7 +79,6 @@ function Shop() {
           </Link>
         </li>
       </ul>
-      <Image src={image2} alt="a girl" width={500} height={591} priority />
 
       <div className={styles.shoppingCard}>
         {productsData
@@ -120,15 +117,15 @@ function Shop() {
               <p className={styles.price}>{product.price} $</p>
             </li>
           ))}
-        <Stack spacing={2}>
-          <Pagination
-            count={10}
-            page={pageDisplayed}
-            color="primary"
-            onChange={handleChangePage}
-          />
-        </Stack>
       </div>
+      <Stack spacing={2}>
+        <Pagination
+          count={10}
+          page={pageDisplayed}
+          color="primary"
+          onChange={handleChangePage}
+        />
+      </Stack>
     </div>
   );
 }

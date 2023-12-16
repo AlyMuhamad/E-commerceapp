@@ -1,0 +1,20 @@
+.stepsPage {
+  margin: 60px 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.stepOrder {
+  font-size: 98px;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.stepAction {
+  font-size: 32px;
+}
+
+.stepDescription {
+}

@@ -1,0 +1,44 @@
+.testimonialsPage {
+  margin: 60px 200px;
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonialsHeadline {
+  font-size: 32px;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+  padding: 20px;
+  justify-items: start;
+  align-items: start;
+}
+
+.testimonialCard {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 6px hsl(0deg 0% 0% / 0.075);
+  border-radius: 5px;
+}
+.picWithName {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+.accountName {
+  font-weight: bold;
+}
+
+.accountPic {
+  border-radius: 50%;
+}
