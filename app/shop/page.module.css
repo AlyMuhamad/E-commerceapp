@@ -7,11 +7,23 @@
   gap: 10px;
 }
 
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+
 .shoppingCategories {
   display: flex;
   list-style-type: none;
   gap: 2rem;
   align-items: center;
+}
+
+.searchbar {
+  padding: 0.8rem;
+  border-radius: 1.2rem;
+  border: none;
 }
 
 .category {

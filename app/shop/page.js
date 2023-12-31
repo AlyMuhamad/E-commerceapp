@@ -16,9 +16,7 @@ const style = {
 
 function Shop() {
   const [productsData, setProductsData] = useState([]);
-  const [showProductOptions, setShowProductOptions] = useState(false);
-  const [productOfInterest, setProductOfInterest] = useState(null);
-
+  const [productOfInterest, setProductOfInterest] = useState('');
   const [pageDisplayed, setPageDisplayed] = useState(1);
 
   const dispatch = useDispatch();
@@ -27,10 +25,6 @@ function Shop() {
   // const { pathname } = useRouter();
   // console.log(pathname);
 
-  function handleProductOptions(id) {
-    setShowProductOptions(!showProductOptions);
-    setProductOfInterest(id);
-  }
   function handleChangePage(event, value) {
     setPageDisplayed(value);
   }
@@ -52,28 +46,36 @@ function Shop() {
 
   return (
     <div className={styles.shoppingPage} onClick={() => handleCart()}>
-      <ul className={styles.shoppingCategories}>
-        <li>
-          <Link href="/shop" className={styles.category}>
-            All
-          </Link>
-        </li>
-        <li>
-          <Link href="/shop/men" className={styles.category}>
-            Men
-          </Link>
-        </li>
-        <li>
-          <Link href="/shop/jewelery" className={styles.category}>
-            Jewels
-          </Link>
-        </li>
-        <li>
-          <Link href="/shop/electronics" className={styles.category}>
-            Electronics
-          </Link>
-        </li>
-      </ul>
+      <div className={styles.topBar}>
+        <ul className={styles.shoppingCategories}>
+          <li>
+            <Link href="/shop" className={styles.category}>
+              All
+            </Link>
+          </li>
+          <li>
+            <Link href="/shop/men" className={styles.category}>
+              Men
+            </Link>
+          </li>
+          <li>
+            <Link href="/shop/jewelery" className={styles.category}>
+              Jewels
+            </Link>
+          </li>
+          <li>
+            <Link href="/shop/electronics" className={styles.category}>
+              Electronics
+            </Link>
+          </li>
+        </ul>
+        <input
+          type="search"
+          className={styles.searchbar}
+          placeholder="search for products"
+          onChange={e => setProductOfInterest(e.target.value)}
+        />
+      </div>
 
       <div className={styles.shoppingCard}>
         {productsData
@@ -97,15 +99,8 @@ function Shop() {
                   height={100}
                   width={100}
                   priority
-                  onClick={e => handleProductOptions(product.id)}
                 />
               </div>
-              {/* {showProductOptions && productOfInterest === product.id && (
-                <div className={styles.shoppingIcons}>
-                  <MdOutlineSearch style={style} />
-                  <BsShuffle style={style} />
-                </div>
-              )} */}
               <div>
                 <p className={styles.price}>{product.price} $</p>
                 <Link className={styles.title} href={`shop/${product.id}`}>
