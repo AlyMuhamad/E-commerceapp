@@ -53,9 +53,9 @@ function Product() {
           <Image
             src={productData.image}
             alt="a product"
-            width={150}
-            height={150}
             priority
+            width={100}
+            height={100}
           />
         </div>
         <div>

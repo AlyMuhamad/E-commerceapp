@@ -1,12 +1,6 @@
-/*
-SPACING SYSTEM (PX) padding
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
-
-FONT SIZE SYSTEM (PX)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 * {
   margin: 0;
@@ -14,9 +8,15 @@ FONT SIZE SYSTEM (PX)
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  height: 100%;
+  min-height: 100vh;
   line-height: 1.5;
+  font-size: 1.6rem;
+
   /* overflow: hidden; */
   font-family: 'Raleway', sans-serif;
   background-color: #f2f2f2;
@@ -40,12 +40,6 @@ ul {
   list-style: none;
 }
 
-/* 
-// select:disabled,
-// input:disabled {
-//   background-color: var(--color-grey-200);
-//   color: var(--color-grey-500);
-// } */
 p,
 h1,
 h2,
@@ -59,3 +53,11 @@ h6 {
 img {
   max-width: 100%;
 }
+
+/*
+SPACING SYSTEM (PX) padding
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+FONT SIZE SYSTEM (PX)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+*/

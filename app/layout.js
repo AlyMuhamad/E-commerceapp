@@ -1,10 +1,10 @@
 'use client';
 
 import './globals.css';
-import Header from './(components)/Header';
+import Header from './(ui)/Header';
 import store from './(features)/store';
 import { Provider } from 'react-redux';
-import SideMenu from './(components)/SideMenu';
+import SideMenu from './(ui)/SideMenu';
 
 export default function RootLayout({ children }) {
   return (

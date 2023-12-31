@@ -1,4 +1,4 @@
-import styles from './ThirdLanding.module.css';
+import styles from './Steps.module.css';
 
 // try adding icon to each step
 
@@ -35,18 +35,21 @@ const stepsData = [
   },
 ];
 
-function ThirdLanding() {
+function Steps() {
   return (
-    <div className={styles.stepsPage}>
-      {stepsData.map(step => (
-        <div key={step.order}>
-          <div className={styles.stepOrder}>{step.order}</div>
-          <p className={styles.stepAction}>{step.action}</p>
-          <p>{step.description}</p>
-        </div>
-      ))}
+    <div className={styles.stepsSection}>
+      <div className={styles.label}>How it Works</div>
+      <div className={styles.steps}>
+        {stepsData.map(step => (
+          <div key={step.order}>
+            <div className={styles.stepOrder}>{step.order}</div>
+            <p className={styles.stepAction}>{step.action}</p>
+            <p className={styles.stepDescription}>{step.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default ThirdLanding;
+export default Steps;

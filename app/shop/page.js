@@ -2,8 +2,7 @@
 import * as React from 'react';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import { BsCart3, BsShuffle } from 'react-icons/bs';
-import { MdOutlineSearch } from 'react-icons/md';
+import { BsCart3, BsHeart } from 'react-icons/bs';
 import Image from 'next/image';
 import styles from './page.module.css';
 import { useEffect, useState } from 'react';
@@ -12,11 +11,7 @@ import { hide } from '../(features)/cartSlice';
 import { useDispatch } from 'react-redux';
 
 const style = {
-  backgroundColor: '#fda4af',
-  // color: 'white',
-  padding: '10px',
-  fontSize: '40px',
-  borderRadius: '50%',
+  fontSize: '2.4rem',
 };
 
 function Shop() {
@@ -84,7 +79,7 @@ function Shop() {
         {productsData
           .filter(
             product =>
-              product.id > pageDisplayed - 1 && product.id < pageDisplayed + 4
+              product.id > pageDisplayed - 1 && product.id < pageDisplayed + 6
           )
           //   {
           //   if (pageDisplayed === 1)
@@ -95,26 +90,33 @@ function Shop() {
 
           .map(product => (
             <li key={product.id} className={styles.product}>
-              <Image
-                src={product.image}
-                alt="a product"
-                width={150}
-                height={150}
-                priority
-                onClick={e => handleProductOptions(product.id)}
-              />
-              {showProductOptions && productOfInterest === product.id && (
+              <div className={styles.productImage}>
+                <Image
+                  src={product.image}
+                  alt="a product"
+                  height={100}
+                  width={100}
+                  priority
+                  onClick={e => handleProductOptions(product.id)}
+                />
+              </div>
+              {/* {showProductOptions && productOfInterest === product.id && (
                 <div className={styles.shoppingIcons}>
                   <MdOutlineSearch style={style} />
-                  <BsCart3 style={style} />
                   <BsShuffle style={style} />
                 </div>
-              )}
-
-              <Link className={styles.title} href={`shop/${product.id}`}>
-                {product.title}
-              </Link>
-              <p className={styles.price}>{product.price} $</p>
+              )} */}
+              <div>
+                <p className={styles.price}>{product.price} $</p>
+                <Link className={styles.title} href={`shop/${product.id}`}>
+                  {product.title}
+                </Link>
+              </div>
+              <div className={styles.subDetails}>
+                <BsHeart style={style} />
+                <BsCart3 style={style} />
+                <div>Reviews</div>
+              </div>
             </li>
           ))}
       </div>

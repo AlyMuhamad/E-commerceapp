@@ -1,0 +1,82 @@
+.landing {
+  display: flex;
+  margin: 4rem auto 12rem;
+  max-width: 120rem;
+  position: relative;
+  overflow: hidden;
+  gap: 3rem;
+}
+
+.landingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.headline {
+  font-size: 8.6rem;
+  font-weight: 900;
+  align-self: flex-start;
+  line-height: 1.2;
+}
+
+.subheadline {
+  font-size: 2.4rem;
+}
+
+.subheadline::selection,
+.headline::selection {
+  color: #fff;
+  background-color: #e11d48;
+}
+
+.btns {
+  margin-top: 6.4rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  padding: 1.6rem 3.2rem;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2rem;
+  /* transition: all 0.2s; */
+  cursor: pointer;
+  border-radius: 0.9rem;
+}
+
+.exploreBtn {
+  background-color: #e11d48;
+  color: #fff;
+}
+.whyBtn {
+  /* color: #e11d48; */
+  border: 2px solid #e11d48;
+}
+
+.btn:hover {
+  color: #000;
+  background-color: #f2f2f2;
+  box-shadow: inset 0 0 0 1px #e11d48;
+}
+
+.footer {
+  display: flex;
+  list-style-type: none;
+  gap: 1.6rem;
+  font-size: 1.6rem;
+  align-items: flex-end;
+}
+
+.category {
+  text-decoration: none;
+  color: black;
+}

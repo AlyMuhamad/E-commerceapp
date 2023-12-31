@@ -1,29 +1,30 @@
 .footerPage {
-  margin: 20px 0 0 0;
+  margin: 2rem 0 0 0;
   background-color: #475569;
   color: white;
 }
 
 .footerLinks {
+  max-width: 120rem;
   display: flex;
-  gap: 80px;
-  margin: 0 200px;
-  padding: 30px 0 100px 0;
+  gap: 8rem;
+  margin: 0 auto;
+  padding: 3rem 0 20rem 0;
 }
 
 .headline {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .socialLinks {
   display: flex;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .contactInfo {
   display: flex;
-  gap: 10px;
-  margin: 5px 0;
+  gap: 1rem;
+  margin: 0.5rem 0;
 }

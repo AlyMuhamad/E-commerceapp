@@ -46,7 +46,6 @@ function SideMenu() {
             <Image
               src={productData.image}
               alt="a product"
-              width={75}
               height={75}
               priority
             />

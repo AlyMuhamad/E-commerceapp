@@ -1,21 +1,22 @@
-.contactPage {
-  margin: 40px 350px;
+.contactSection {
+  max-width: 90rem;
+  margin: 4rem auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
   /* justify-content: start; */
   /* justify-items: start; */
   /* overflow: visible; */
 }
 
 .headline {
-  font-size: 32px;
+  font-size: 3.2rem;
 }
 
 .clientForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .socialMedia {
@@ -24,7 +25,7 @@
 }
 
 .formHeadline {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .labelWithField {
@@ -34,24 +35,24 @@
 
 .label {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.8rem;
   /* display: block; */
 }
 
 .field {
-  padding: 10px;
+  padding: 1rem;
   /* width: 100%; */
 }
 
 .lastName {
-  padding: 10px;
-  margin-left: 20px;
+  padding: 1rem;
+  margin-left: 2rem;
 }
 
 .submit {
-  background-color: #94a3b8;
-  padding: 10px 20px;
-  margin-top: 20px;
+  background-color: #f43f5e;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
   text-decoration: none;
   color: white;
   text-align: center;
@@ -64,7 +65,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 7rem;
 }
 
 .inquerBody {

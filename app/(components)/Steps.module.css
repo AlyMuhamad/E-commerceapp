@@ -1,0 +1,34 @@
+.stepsSection {
+  max-width: 120rem;
+  margin: 16rem auto;
+}
+
+.label {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e11d48;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stepOrder {
+  font-size: 9.8rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.stepAction {
+  font-size: 3.2rem;
+}
+
+.stepOrder::selection,
+.stepAction::selection,
+.stepDescription::selection {
+  color: #fff;
+  background-color: #e11d48;
+}

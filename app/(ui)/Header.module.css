@@ -1,39 +1,40 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 4.8rem;
   position: relative;
-  margin: 20px 200px;
+  margin: 2rem auto;
+  max-width: 120rem;
 }
 .logo {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .links {
   display: flex;
   list-style-type: none;
   align-items: center;
-  gap: 16px;
-  font-size: 16px;
+  gap: 1.6rem;
+  font-size: 1.6rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 .link {
   text-decoration: none;
   color: black;
-  padding: 12px;
+  padding: 1.2rem;
 }
 
 .link:hover {
-  /* background-color: #94a3b8; */
+  color: #e11d48;
 }
 
 .icons {
   display: flex;
-  gap: 5px;
+  gap: 0.5rem;
   position: absolute;
-  right: 20px;
+  right: 2rem;
   align-items: center;
   /* padding: 10px; */
 }
@@ -44,10 +45,11 @@
   flex-direction: column;
   /* padding: 10px; */
   align-items: center;
+  transition: 0.3s linear;
 }
 
 .productsInCart {
-  font-size: 12px;
+  font-size: 1.2rem;
   background-color: #f43f5e;
   padding: 1px;
   color: white;
@@ -56,6 +58,6 @@
   text-align: center;
   text-justify: distribute;
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
 }

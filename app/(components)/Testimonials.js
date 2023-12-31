@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import styles from './FourthLanding.module.css';
+import styles from './Testimonials.module.css';
 import image1 from '(assets)/woman1.jpg';
 import image2 from '(assets)/man1.jpg';
 import image3 from '(assets)/woman2.jpg';
@@ -8,6 +10,7 @@ import image5 from '(assets)/woman3.jpg';
 import image6 from '(assets)/man3.jpg';
 import image7 from '(assets)/man4.jpg';
 import image8 from '(assets)/woman4.jpg';
+import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 const testimonialsData = [
   {
@@ -60,9 +63,15 @@ const testimonialsData = [
   },
 ];
 
-function FourthLanding() {
+const Testimonials = forwardRef((props, ref) => {
+  const myRef = useRef();
+  useImperativeHandle(ref, () => ({
+    scrollIntoView: () => {
+      myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+  }));
   return (
-    <div className={styles.testimonialsPage}>
+    <div ref={myRef} className={styles.testimonialsSection}>
       <p className={styles.testimonialsHeadline}>From our clients</p>
       <div className={styles.testimonials}>
         {testimonialsData.map(testimonial => (
@@ -72,7 +81,6 @@ function FourthLanding() {
               <Image
                 src={testimonial.profilePic}
                 alt="profile picture"
-                width={45}
                 height={45}
                 className={styles.accountPic}
                 priority
@@ -84,6 +92,8 @@ function FourthLanding() {
       </div>
     </div>
   );
-}
+});
 
-export default FourthLanding;
+Testimonials.displayName = 'Testimonials';
+
+export default Testimonials;

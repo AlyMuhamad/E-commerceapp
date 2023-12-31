@@ -26,7 +26,7 @@ function Contact() {
   const [inquerySent, setInquerySent] = useState(false);
 
   return (
-    <div className={styles.contactPage}>
+    <div className={styles.contactSection}>
       <div>
         <p className={styles.headline}>About Me</p>
         <p>

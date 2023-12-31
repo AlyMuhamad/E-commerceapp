@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import styles from './Header.module.css';
-import { BsCart3, BsMenuButtonWideFill } from 'react-icons/bs';
+import { BsCart3, BsMenuButtonWideFill, BsHeart } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { show } from '../(features)/cartSlice';
 
@@ -26,11 +26,14 @@ const links = [
 ];
 
 const style = {
-  // backgroundColor: '#9e9e',
-  margin: '15px',
-  fontSize: '24px',
+  margin: '1.5rem',
+  fontSize: '2.4rem',
   cursor: 'pointer',
-  // borderRadius: '50%',
+};
+
+const favorites = {
+  ...style,
+  stroke: '1rem',
 };
 
 function Header() {
@@ -60,6 +63,7 @@ function Header() {
       </div>
 
       <div className={styles.icons}>
+        <BsHeart style={favorites} />
         <div className={styles.cart} onClick={() => handleCart()}>
           {/* {cartProducts.length > 0 ? (
             <div className={styles.productsInCart}>{cartProducts.length}</div>

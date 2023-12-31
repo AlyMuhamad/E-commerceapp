@@ -3,7 +3,7 @@ import { FaPhoneAlt } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import { IoLocation } from 'react-icons/io5';
 
-import styles from './FifthLanding.module.css';
+import styles from './Footer.module.css';
 
 const style = {
   //   margin: '15px',
@@ -43,7 +43,7 @@ function Footer() {
         </div>
         <ul>
           <li className={styles.headline}>Follow Us</li>
-          <li className={styles.socialLinks}>
+          <ul className={styles.socialLinks}>
             <li>
               <FaFacebook style={style} />
             </li>
@@ -56,7 +56,7 @@ function Footer() {
             <li>
               <FaYoutube style={style} />
             </li>
-          </li>
+          </ul>
         </ul>
       </div>
     </div>

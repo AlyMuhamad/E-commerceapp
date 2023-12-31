@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './SecondLanding.module.css';
+import styles from './Carousel.module.css';
 import image1 from '(assets)/girl1.jpg';
 import image2 from '(assets)/girl2.webp';
 import image3 from '(assets)/girl3.jpg';
@@ -35,7 +35,7 @@ const carouselData = [
   },
 ];
 
-function SecondLanding() {
+function Carousel() {
   const [carouselIndex, setCarouselIndex] = useState(0);
 
   function handlePrevious() {
@@ -49,16 +49,15 @@ function SecondLanding() {
 
   return (
     <div className={styles.secondLanding}>
+      {/* {carouselIndex > 0 && ()} */}
+      <button className={styles.previous} onClick={() => handlePrevious()}>
+        &lt;
+      </button>
       <div className={styles.carousel}>
-        {/* {carouselIndex > 0 && ()} */}
-        <button className={styles.previous} onClick={() => handlePrevious()}>
-          &lt;
-        </button>
         <Image
           src={carouselData[carouselIndex].image}
           alt="a girl"
-          width={333}
-          height={500}
+          height={300}
           className={styles.girl}
           priority
         />
@@ -66,13 +65,19 @@ function SecondLanding() {
           <p>{carouselData[carouselIndex].caption}</p>
           <p>Our Store</p>
         </div>
-        {/* {carouselIndex < 4 && ()} */}
-        <button className={styles.next} onClick={() => handleNext()}>
-          &gt;
-        </button>
+      </div>
+      {/* {carouselIndex < 4 && ()} */}
+      <button className={styles.next} onClick={() => handleNext()}>
+        &gt;
+      </button>
+      <div className={styles.dots}>
+        <button className={styles.dot}>&nbsp;</button>
+        <button className={styles.dot}>&nbsp;</button>
+        <button className={styles.dot}>&nbsp;</button>
+        <button className={styles.dot}>&nbsp;</button>
       </div>
     </div>
   );
 }
 
-export default SecondLanding;
+export default Carousel;

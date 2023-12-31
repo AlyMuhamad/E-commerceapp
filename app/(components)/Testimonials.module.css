@@ -1,5 +1,6 @@
-.testimonialsPage {
-  margin: 60px 200px;
+.testimonialsSection {
+  max-width: 120rem;
+  margin: 6rem auto;
   /* background-color: white; */
   display: flex;
   flex-direction: column;
@@ -7,15 +8,15 @@
 }
 
 .testimonialsHeadline {
-  font-size: 32px;
+  font-size: 3.2rem;
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
-  padding: 20px;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  padding: 2remx;
   justify-items: start;
   align-items: start;
 }
@@ -31,8 +32,8 @@
 .picWithName {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 10px;
+  gap: 1rem;
+  margin: 1rem;
 }
 
 .accountName {
