@@ -13,7 +13,7 @@ const style = {
 
 function Footer() {
   return (
-    <div className={styles.footerPage}>
+    <div className={styles.footerSection}>
       <div className={styles.footerLinks}>
         <p className={styles.headline}>Our Logo</p>
         <ul>

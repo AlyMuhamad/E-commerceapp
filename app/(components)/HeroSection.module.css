@@ -80,3 +80,9 @@
   text-decoration: none;
   color: black;
 }
+
+@media (max-width: 84.375em) {
+  .landing {
+    max-width: 110rem;
+  }
+}

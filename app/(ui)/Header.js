@@ -52,7 +52,9 @@ function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.links}>
-        <p className={styles.logo}>Logo</p>
+        <Link href="/" className={styles.logo}>
+          Logo
+        </Link>
         {links.map(link => (
           <li key={link.href}>
             <Link href={link.href} className={styles.link}>

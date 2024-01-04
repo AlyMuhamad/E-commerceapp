@@ -32,3 +32,9 @@
   color: #fff;
   background-color: #e11d48;
 }
+
+@media (max-width: 84.375em) {
+  .stepsSection {
+    max-width: 110rem;
+  }
+}

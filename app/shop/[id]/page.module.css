@@ -11,25 +11,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   width: 50%;
 }
 
 .productTitle {
-  font-size: 20px;
+  font-size: 1.8rem;
   font-weight: bold;
+}
+
+.price {
+  color: black;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
 }
 
 .productDescription {
   line-height: 1.4;
 }
 
+.purchaseDetails {
+  display: flex;
+  gap: 6rem;
+}
+
 .buttons {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .addBtn,
@@ -38,7 +51,7 @@
   text-decoration: none;
   text-align: center;
   color: white;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   position: relative;
   overflow: hidden;
   z-index: 1000;
@@ -47,20 +60,20 @@
 
 .amount {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   align-items: center;
 }
 
 .amountNum {
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 .amountBtn {
-  font-size: 24px;
+  font-size: 2.4rem;
   /* padding: 4px; */
   border-radius: 50%;
   border: none;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   text-align: center;
 }
 
@@ -75,24 +88,24 @@
 .productDetails {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .categoryDetails,
 .descriptionDetails,
 .rateDetails {
-  margin-top: 10px;
+  margin-top: 1rem;
   display: flex;
-  gap: 40px;
-  padding-bottom: 10px;
+  gap: 4rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #cbd5e1;
 }
 
 .categoryDetails {
-  gap: 57px;
+  gap: 5.7rem;
 }
 
 .rateDetails {
-  gap: 90px;
+  gap: 9rem;
   border: none;
 }

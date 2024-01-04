@@ -16,10 +16,6 @@ function Product() {
 
   const dispatch = useDispatch();
 
-  const productInCart = useSelector(store => {
-    return store.cart.productInCart;
-  });
-
   function handleDescreaseAmount() {
     if (amount <= 1) return;
     setAmount(() => amount - 1);
@@ -54,37 +50,42 @@ function Product() {
             src={productData.image}
             alt="a product"
             priority
-            width={100}
-            height={100}
+            width={175}
+            height={175}
           />
         </div>
         <div>
+          <p className={styles.price}>{productData.price} $</p>
           <p className={styles.productTitle}>{productData.title}</p>
-          <p>{productData.price} $</p>
         </div>
-        <div className={styles.amount}>
-          <button className={styles.amountBtn} onClick={handleDescreaseAmount}>
-            -
-          </button>
-          <div className={styles.amountNum}>{amount}</div>
-          <button
-            className={styles.amountBtn}
-            onClick={() => handleIncreaseAmount()}
-          >
-            +
-          </button>
-        </div>
+        <div className={styles.purchaseDetails}>
+          <div className={styles.amount}>
+            <button
+              className={styles.amountBtn}
+              onClick={handleDescreaseAmount}
+            >
+              -
+            </button>
+            <div className={styles.amountNum}>{amount}</div>
+            <button
+              className={styles.amountBtn}
+              onClick={() => handleIncreaseAmount()}
+            >
+              +
+            </button>
+          </div>
 
-        <div className={styles.buttons}>
-          <button
-            className={styles.addBtn}
-            onClick={() => handleProduct(productData)}
-          >
-            {addedProduct ? 'remove from my cart' : 'Add to my cart'}
-          </button>
-          <Link href="/" className={styles.buyBtn}>
-            Buy Now
-          </Link>
+          <div className={styles.buttons}>
+            <button
+              className={styles.addBtn}
+              onClick={() => handleProduct(productData)}
+            >
+              {addedProduct ? 'remove from my cart' : 'Add to my cart'}
+            </button>
+            <Link href="/" className={styles.buyBtn}>
+              Buy Now
+            </Link>
+          </div>
         </div>
         <div className={styles.productDetails}>
           <div className={styles.categoryDetails}>

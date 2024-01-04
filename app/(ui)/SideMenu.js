@@ -47,6 +47,7 @@ function SideMenu() {
               src={productData.image}
               alt="a product"
               height={75}
+              width={75}
               priority
             />
             <p className={styles.productTitle}>{productData.title}</p>

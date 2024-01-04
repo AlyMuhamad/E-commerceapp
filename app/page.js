@@ -6,6 +6,7 @@ import Footer from './(components)/Footer';
 import Steps from './(components)/Steps';
 import Testimonials from './(components)/Testimonials';
 import { useRef } from 'react';
+import CTA from './(components)/CTA';
 
 export default function Home() {
   const ref = useRef(null);
@@ -15,6 +16,7 @@ export default function Home() {
       <Carousel />
       <Steps />
       <Testimonials ref={ref} />
+      <CTA />
       <Footer />
     </main>
   );

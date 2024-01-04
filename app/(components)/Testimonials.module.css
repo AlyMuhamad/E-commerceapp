@@ -43,3 +43,9 @@
 .accountPic {
   border-radius: 50%;
 }
+
+@media (max-width: 84.375em) {
+  .testimonialsSection {
+    max-width: 110rem;
+  }
+}

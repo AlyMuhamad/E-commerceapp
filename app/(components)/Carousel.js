@@ -48,7 +48,7 @@ function Carousel() {
   }
 
   return (
-    <div className={styles.secondLanding}>
+    <div className={styles.carouselSection}>
       {/* {carouselIndex > 0 && ()} */}
       <button className={styles.previous} onClick={() => handlePrevious()}>
         &lt;

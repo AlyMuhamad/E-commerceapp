@@ -1,33 +1,35 @@
 'use client';
 import * as React from 'react';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import { BsCart3, BsHeart } from 'react-icons/bs';
+import { BsCart3, BsHeart, BsSearch } from 'react-icons/bs';
+import { FaCheckCircle } from 'react-icons/fa';
 import Image from 'next/image';
 import styles from './page.module.css';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { hide } from '../(features)/cartSlice';
-import { useDispatch } from 'react-redux';
+import { add, hide, remove } from '../(features)/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const style = {
   fontSize: '2.4rem',
+  cursor: 'pointer',
+};
+const searchStyle = {
+  ...style,
+  margin: '0 1.9rem 0 0',
 };
 
 function Shop() {
   const [productsData, setProductsData] = useState([]);
   const [productOfInterest, setProductOfInterest] = useState('');
-  const [pageDisplayed, setPageDisplayed] = useState(1);
+  const [searchResult, setSearchResult] = useState([]);
+  const [categoryProducts, setCategoryProducts] = useState([]);
+  const [addedProduct, setAddedProduct] = useState(false);
 
   const dispatch = useDispatch();
 
-  // const { id } = useSearchParams();
-  // const { pathname } = useRouter();
-  // console.log(pathname);
-
-  function handleChangePage(event, value) {
-    setPageDisplayed(value);
-  }
+  const cartProducts = useSelector(store => {
+    return store.cart.cartProducts;
+  });
 
   function handleCart() {
     dispatch(hide());
@@ -42,87 +44,83 @@ function Shop() {
     products();
   }, []);
 
-  // className={`${styles.description} ${styles.yellow}`}
+  function handleSearch() {
+    setSearchResult(
+      productsData.filter(product =>
+        product.title.toLowerCase().includes(productOfInterest)
+      )
+    );
+  }
+
+  function handleCategory(category) {
+    setCategoryProducts(
+      productsData.filter(product => product.category === category)
+    );
+  }
+
+  function handleProduct(productData) {
+    setAddedProduct(!addedProduct);
+    addedProduct ? dispatch(remove(productData)) : dispatch(add(productData));
+  }
 
   return (
     <div className={styles.shoppingPage} onClick={() => handleCart()}>
       <div className={styles.topBar}>
         <ul className={styles.shoppingCategories}>
-          <li>
-            <Link href="/shop" className={styles.category}>
-              All
-            </Link>
-          </li>
-          <li>
-            <Link href="/shop/men" className={styles.category}>
-              Men
-            </Link>
-          </li>
-          <li>
-            <Link href="/shop/jewelery" className={styles.category}>
-              Jewels
-            </Link>
-          </li>
-          <li>
-            <Link href="/shop/electronics" className={styles.category}>
-              Electronics
-            </Link>
-          </li>
+          <li onClick={() => handleCategory(' ')}>All</li>
+          <li onClick={() => handleCategory("men's clothing")}>Men</li>
+          <li onClick={() => handleCategory("women's clothing")}>Women</li>
+          <li onClick={() => handleCategory('jewelery')}>Jewels</li>
+          <li onClick={() => handleCategory('electronics')}>Electronics</li>
         </ul>
-        <input
-          type="search"
-          className={styles.searchbar}
-          placeholder="search for products"
-          onChange={e => setProductOfInterest(e.target.value)}
-        />
+        <div className={styles.searchbar}>
+          <input
+            type="search"
+            className={styles.searchfield}
+            placeholder="search for products"
+            onChange={e => setProductOfInterest(e.target.value)}
+          />
+          <BsSearch style={searchStyle} onClick={handleSearch} />
+        </div>
       </div>
 
       <div className={styles.shoppingCard}>
-        {productsData
-          .filter(
-            product =>
-              product.id > pageDisplayed - 1 && product.id < pageDisplayed + 6
-          )
-          //   {
-          //   if (pageDisplayed === 1)
-          //     product.id > pageDisplayed - 1 && product.id < pageDisplayed + 4;
-          //   if (pageDisplayed === 2)
-          //     product.id > pageDisplayed + 2 && product.id < pageDisplayed + 45;
-          // }
-
-          .map(product => (
-            <li key={product.id} className={styles.product}>
-              <div className={styles.productImage}>
-                <Image
-                  src={product.image}
-                  alt="a product"
-                  height={100}
-                  width={100}
-                  priority
+        {(searchResult.length > 0
+          ? searchResult
+          : categoryProducts.length > 0
+          ? categoryProducts
+          : productsData
+        ).map(product => (
+          <li key={product.id} className={styles.product}>
+            <div className={styles.productImage}>
+              <Image
+                src={product.image}
+                alt="a product"
+                height={175}
+                width={175}
+                priority
+              />
+            </div>
+            <div>
+              <p className={styles.price}>{product.price} $</p>
+              <Link className={styles.title} href={`shop/${product.id}`}>
+                {product.title}
+              </Link>
+            </div>
+            <div className={styles.subDetails}>
+              <div className={styles.productIcons}>
+                <BsHeart style={style} />
+                <BsCart3
+                  key={product.id}
+                  style={style}
+                  onClick={() => handleProduct(product)}
                 />
               </div>
-              <div>
-                <p className={styles.price}>{product.price} $</p>
-                <Link className={styles.title} href={`shop/${product.id}`}>
-                  {product.title}
-                </Link>
-              </div>
-              <div className={styles.subDetails}>
-                <BsHeart style={style} />
-                <BsCart3 style={style} />
-                <div>Reviews</div>
-              </div>
-            </li>
-          ))}
+              <Link href="/">Reviews</Link>
+            </div>
+          </li>
+        ))}
       </div>
-      <Stack spacing={2}>
-        <Pagination
-          count={10}
-          page={pageDisplayed}
-          color="primary"
-          onChange={handleChangePage}
-        />
-      </Stack>
     </div>
   );
 }

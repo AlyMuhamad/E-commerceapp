@@ -21,14 +21,29 @@
 }
 
 .searchbar {
-  padding: 0.8rem;
-  border-radius: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  background-color: #cbd5e1;
+  border-radius: 1.8rem;
   border: none;
 }
 
-.category {
+.searchfield {
+  padding: 1rem;
+  border-radius: 1.8rem;
+  border: none;
+}
+
+.shoppingCategories li {
+  cursor: pointer;
   text-decoration: none;
   font-weight: bold;
+}
+.shoppingCategories li:hover {
+  color: #e11d48;
 }
 
 .shoppingCard {
@@ -81,15 +96,14 @@
   font-size: 1.8rem;
 }
 
-.subDetails {
+.subDetails,
+.productIcons {
   display: flex;
-  gap: 2rem;
-  justify-items: center;
-  /* z-index: 2; */
-  /* position: absolute; */
-  /* margin: 10rem; */
+  align-items: center;
+  gap: 1.8rem;
 }
 
-/* .subDetails:last-child {
-  margin-left: 3rem;
-} */
+.subDetails {
+  width: 100%;
+  justify-content: space-between;
+}
