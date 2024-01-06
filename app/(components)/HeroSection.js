@@ -27,16 +27,18 @@ function HeroSection({ scrollToTestimonials }) {
           </button>
         </div>
       </div>
-      <Image
-        src={image}
-        alt="a girl"
-        priority
-        sizes="100vw"
-        style={{
-          width: '100%',
-          height: 'auto',
-        }}
-      />
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <Image
+          src={image}
+          alt="a girl"
+          priority
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
+        />
+      </div>
     </div>
   );
 }

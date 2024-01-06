@@ -1,4 +1,10 @@
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
+import {
+  FaFacebook,
+  FaYoutube,
+  FaInstagram,
+  FaDribbble,
+  FaLinkedinIn,
+} from 'react-icons/fa';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import { IoLocation } from 'react-icons/io5';
@@ -6,10 +12,33 @@ import { IoLocation } from 'react-icons/io5';
 import styles from './Footer.module.css';
 
 const style = {
-  //   margin: '15px',
+  margin: 'auto',
   fontSize: '32px',
   cursor: 'pointer',
 };
+
+const icons = [
+  {
+    id: 0,
+    icon: <FaInstagram style={style} />,
+  },
+  {
+    id: 1,
+    icon: <FaFacebook style={style} />,
+  },
+  {
+    id: 2,
+    icon: <FaDribbble style={style} />,
+  },
+  {
+    id: 3,
+    icon: <FaYoutube style={style} />,
+  },
+  {
+    id: 4,
+    icon: <FaLinkedinIn style={style} />,
+  },
+];
 
 function Footer() {
   return (
@@ -43,20 +72,15 @@ function Footer() {
         </div>
         <ul>
           <li className={styles.headline}>Follow Us</li>
-          <ul className={styles.socialLinks}>
-            <li>
-              <FaFacebook style={style} />
-            </li>
-            <li>
-              <FaTwitter style={style} />
-            </li>
-            <li>
-              <FaInstagram style={style} />
-            </li>
-            <li>
-              <FaYoutube style={style} />
-            </li>
-          </ul>
+          <div className={styles.linkSection}>
+            <ul className={styles.socialLinks}>
+              {icons.map(icon => (
+                <li className={styles.iconItem} key={icon.id}>
+                  <div className={styles.iconLink}>{icon.icon}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </ul>
       </div>
     </div>

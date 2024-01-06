@@ -5,7 +5,7 @@
 }
 
 .carousel {
-  background-color: #881337;
+  background-color: var(--color-brand-500);
   padding: 3.2rem;
   padding-left: 8.6rem;
   /* box-shadow: 0 1px 2px rgb(0 0 0 / 0.1); */
@@ -70,10 +70,13 @@
 .dot {
   height: 1.2rem;
   width: 1.2rem;
-  background-color: #fff;
-  border: 2px solid #087f5b;
+  border: 1px solid var(--color-brand-800);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.back {
+  background-color: var(--color-brand-500);
 }
 
 @media (max-width: 84.375em) {

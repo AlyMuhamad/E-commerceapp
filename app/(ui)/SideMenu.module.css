@@ -61,7 +61,7 @@
 } */
 
 .removeBtn {
-  background-color: #94a3b8;
+  background-color: var(--color-brand-500);
   padding: 10px 20px;
   display: inline-block;
   text-decoration: none;
@@ -93,6 +93,6 @@
   padding: 10px 15px;
   margin: 20px;
   color: white;
-  background-color: #9f1239;
+  background-color: var(--color-brand-900);
   text-align: center;
 }

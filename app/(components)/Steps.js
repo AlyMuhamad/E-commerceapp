@@ -38,7 +38,7 @@ const stepsData = [
 function Steps() {
   return (
     <div className={styles.stepsSection}>
-      <div className={styles.label}>How it Works</div>
+      <div className={styles.label}> How it Works</div>
       <div className={styles.steps}>
         {stepsData.map(step => (
           <div key={step.order}>

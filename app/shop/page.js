@@ -10,11 +10,12 @@ import { add, hide, remove } from '../(features)/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const style = {
-  fontSize: '2.4rem',
+  fontSize: '2.6rem',
   cursor: 'pointer',
 };
 const searchStyle = {
-  ...style,
+  fontSize: '2.4rem',
+  cursor: 'pointer',
   margin: '0 1.9rem 0 0',
 };
 
@@ -24,6 +25,7 @@ function Shop() {
   const [searchResult, setSearchResult] = useState([]);
   const [categoryProducts, setCategoryProducts] = useState([]);
   const [addedProduct, setAddedProduct] = useState(false);
+  const [liked, setLiked] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -77,7 +79,7 @@ function Shop() {
           <input
             type="search"
             className={styles.searchfield}
-            placeholder="search for products"
+            placeholder="Search for products"
             onChange={e => setProductOfInterest(e.target.value)}
           />
           <BsSearch style={searchStyle} onClick={handleSearch} />
@@ -109,12 +111,17 @@ function Shop() {
             </div>
             <div className={styles.subDetails}>
               <div className={styles.productIcons}>
-                <BsHeart style={style} />
                 <BsCart3
                   key={product.id}
                   style={style}
                   onClick={() => handleProduct(product)}
                 />
+                <div className={styles.like}>
+                  <div
+                    className={`${styles.hearth} ${liked && styles.liked}`}
+                    onClick={() => setLiked(!liked)}
+                  />
+                </div>
               </div>
               <Link href="/">Reviews</Link>
             </div>

@@ -78,7 +78,7 @@
 }
 
 .addBtn {
-  background-color: #94a3b8;
+  background-color: var(--color-brand-500);
 }
 
 .buyBtn {

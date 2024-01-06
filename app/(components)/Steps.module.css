@@ -1,12 +1,12 @@
 .stepsSection {
   max-width: 120rem;
-  margin: 16rem auto;
+  margin: 16rem auto 8rem;
 }
 
 .label {
   font-size: 2rem;
   font-weight: bold;
-  color: #e11d48;
+  color: var(--color-brand-700);
 }
 
 .steps {
@@ -30,7 +30,7 @@
 .stepAction::selection,
 .stepDescription::selection {
   color: #fff;
-  background-color: #e11d48;
+  background-color: var(--color-brand-500);
 }
 
 @media (max-width: 84.375em) {

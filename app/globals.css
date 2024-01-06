@@ -8,6 +8,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-brand-50: #f8fafc;
+  --color-brand-100: #f1f5f9;
+  --color-brand-200: #e2e8f0;
+  --color-brand-400: #94a3b8;
+  --color-brand-500: #64748b;
+  --color-brand-600: #475569;
+  --color-brand-700: #334155;
+  --color-brand-800: #1e293b;
+  --color-brand-900: #0f172a;
+
+  --bg: #dcdde1;
+  --color-icon: #535c68;
+  --social-icon1: #e4405f;
+  --social-icon2: #3b5999;
+  --social-icon3: #e4405f;
+  --social-icon4: #cd201f;
+  --social-icon5: #0077b5;
+
+  --size: 6rem;
+  --frames: 62;
+}
+
 html {
   font-size: 62.5%;
 }

@@ -1,6 +1,6 @@
 .footerSection {
   margin: 2rem 0 0 0;
-  background-color: #475569;
+  background-color: var(--color-brand-800);
   color: white;
 }
 
@@ -18,11 +18,6 @@
   margin-bottom: 1rem;
 }
 
-.socialLinks {
-  display: flex;
-  gap: 3rem;
-}
-
 .contactInfo {
   display: flex;
   gap: 1rem;
@@ -33,4 +28,84 @@
   .footerLinks {
     max-width: 110rem;
   }
+}
+
+.linkSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -10;
+}
+
+.socialLinks {
+  /* padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem; */
+  width: 100%;
+  max-width: 50rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.iconItem {
+  list-style: none;
+}
+
+.iconLink {
+  display: inline-flex;
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--color-icon);
+  width: 6rem;
+  height: 6rem;
+  transition: 0.5s linear;
+  position: relative;
+  z-index: 1;
+  margin: auto;
+}
+
+.iconLink:hover {
+  color: #fff;
+}
+
+.iconLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 6rem;
+  height: 6rem;
+  background: #000;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.3s cubic-bezier(0.95, 0.32, 0.37, 1.21);
+}
+
+.iconLink:hover::before {
+  transform: scale(1);
+}
+
+.iconItem:nth-child(1) .iconLink:hover:before {
+  background: var(--social-icon1);
+}
+
+.iconItem:nth-child(2) .iconLink:hover:before {
+  background: var(--social-icon2);
+}
+
+.iconItem:nth-child(3) .iconLink:hover:before {
+  background: var(--social-icon3);
+}
+
+.iconItem:nth-child(4) .iconLink:hover:before {
+  background: var(--social-icon4);
+}
+
+.iconItem:nth-child(5) .iconLink:hover:before {
+  background: var(--social-icon5);
 }
