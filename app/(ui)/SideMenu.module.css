@@ -31,9 +31,8 @@
   font-size: 18px;
   margin: 4px;
   padding: 8px;
-  background-color: #cbd5e1;
-  /* background-color: white; */
-  /* overflow: hidden; */
+  background-color: var(--color-brand-900);
+  color: #fff;
   border: none;
   border-radius: 50%;
   height: 50px;

@@ -9,5 +9,4 @@ ecommerce app that offers a plenty of products you can choose from, add to you c
 
 ### you can find me on
 
-- Email
 - Instagram

@@ -82,9 +82,6 @@ function Product() {
             >
               {addedProduct ? 'remove from my cart' : 'Add to my cart'}
             </button>
-            <Link href="/" className={styles.buyBtn}>
-              Buy Now
-            </Link>
           </div>
         </div>
         <div className={styles.productDetails}>

@@ -40,36 +40,54 @@ const icons = [
   },
 ];
 
+const info = [
+  {
+    icon: <IoLocation />,
+    text: 'Egypt,Beheira',
+  },
+  {
+    icon: <FaPhoneAlt />,
+    text: '+201128632928',
+  },
+  {
+    icon: <IoMail />,
+    text: 'alimoh0801@gmail.com',
+  },
+];
+
+const links = [
+  {
+    head: 'Company',
+    sublinks: ['About us', 'FAQ', 'Reviews', 'Locations', 'Forums'],
+  },
+  {
+    head: 'More',
+    sublinks: ['News', 'Careers', 'Support', 'Blog'],
+  },
+];
+
 function Footer() {
   return (
     <div className={styles.footerSection}>
       <div className={styles.footerLinks}>
         <p className={styles.headline}>Our Logo</p>
-        <ul>
-          <li className={styles.headline}>Company</li>
-          <li>About us</li>
-          <li></li>
+        {links.map(link => (
+          <ul key={link.head} className={styles.linksRow}>
+            <li className={styles.headline}>{link.head}</li>
+            {link.sublinks.map(sublink => (
+              <li key={sublink.indexOf}>{sublink}</li>
+            ))}
+          </ul>
+        ))}
+        <ul className={styles.linksRow}>
+          <p className={styles.headline}>Info</p>
+          {info.map(info => (
+            <div key={info.text} className={styles.contactInfo}>
+              {info.icon}
+              <p>{info.text}</p>
+            </div>
+          ))}
         </ul>
-        <ul>
-          <li className={styles.headline}>More</li>
-          <li>News</li>
-          <li>Careers</li>
-        </ul>
-        <div>
-          <p className={styles.headline}>Contact Info</p>
-          <div className={styles.contactInfo}>
-            <IoLocation />
-            <p>Egypt, Beheira</p>
-          </div>
-          <div className={styles.contactInfo}>
-            <FaPhoneAlt />
-            <p>+201128632928</p>
-          </div>
-          <div className={styles.contactInfo}>
-            <IoMail />
-            <p>alimoh0801@gmail.com</p>
-          </div>
-        </div>
         <ul>
           <li className={styles.headline}>Follow Us</li>
           <div className={styles.linkSection}>

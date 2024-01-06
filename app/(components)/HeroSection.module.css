@@ -162,36 +162,10 @@
   --_p: 105%;
 }
 
+/* RESPONVIENESs */
+
 @media (max-width: 84.375em) {
   .landing {
     max-width: 110rem;
   }
 }
-
-/*
-.btn,
-.btn:link,
-.btn:visited {
-  padding: 1.6rem 3.2rem;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2rem;*/
-/* transition: all 0.2s; */
-/* cursor: pointer; */
-/* border-radius: 0.9rem; */
-/* } */
-
-/* .exploreBtn {
-  background-color: var(--color-brand-500);
-  color: #fff;
-} */
-/* .whyBtn {
-  border: 2px solid var(--color-brand-500);
-} */
-
-/* .btn:hover {
-  color: #000;
-  background-color: #f2f2f2;
-  box-shadow: inset 0 0 0 1px var(--color-brand-500);
-} */

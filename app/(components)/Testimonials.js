@@ -82,7 +82,7 @@ const Testimonials = forwardRef((props, ref) => {
                 <Image
                   src={testimonial.profilePic}
                   alt="profile picture"
-                  height={45}
+                  height={50}
                   className={styles.accountPic}
                   priority
                 />
