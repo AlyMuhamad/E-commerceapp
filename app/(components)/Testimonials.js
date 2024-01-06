@@ -2,14 +2,14 @@
 
 import Image from 'next/image';
 import styles from './Testimonials.module.css';
-import image1 from '(assets)/woman1.jpg';
-import image2 from '(assets)/man1.jpg';
-import image3 from '(assets)/woman2.jpg';
-import image4 from '(assets)/man2.jpg';
-import image5 from '(assets)/woman3.jpg';
-import image6 from '(assets)/man3.jpg';
-import image7 from '(assets)/man4.jpg';
-import image8 from '(assets)/woman4.jpg';
+import image1 from '../(assets)/woman1.jpg';
+import image2 from '../(assets)/man1.jpg';
+import image3 from '../(assets)/woman2.jpg';
+import image4 from '../(assets)/man2.jpg';
+import image5 from '../(assets)/woman3.jpg';
+import image6 from '../(assets)/man3.jpg';
+import image7 from '../(assets)/man4.jpg';
+import image8 from '../(assets)/woman4.jpg';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
 const testimonialsData = [

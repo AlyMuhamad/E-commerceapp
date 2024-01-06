@@ -1,11 +1,11 @@
 'use client';
 
 import styles from './Carousel.module.css';
-import image1 from '(assets)/girl1.jpg';
-import image2 from '(assets)/girl2.jpg';
-import image3 from '(assets)/girl3.jpg';
-import image4 from '(assets)/girl4.jpg';
-import image5 from '(assets)/girl5.jpg';
+import image1 from '../(assets)/girl1.jpg';
+import image2 from '../(assets)/girl2.jpg';
+import image3 from '../(assets)/girl3.jpg';
+import image4 from '../(assets)/girl4.jpg';
+import image5 from '../(assets)/girl5.jpg';
 import Image from 'next/image';
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './HeroSection.module.css';
-import image from '(assets)/girls.jpg';
+import image from '../(assets)/girls.jpg';
 
 function HeroSection({ scrollToTestimonials }) {
   const scroll = () => {
