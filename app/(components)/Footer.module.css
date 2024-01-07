@@ -9,7 +9,7 @@
   display: flex;
   gap: 8rem;
   margin: 0 auto;
-  padding: 3rem 0 20rem 0;
+  padding: 3rem 2rem 10rem;
 }
 
 .headline {
@@ -108,8 +108,29 @@
 }
 
 /* RESPONVIENESs */
+
 @media (max-width: 84.375em) {
   .footerLinks {
     max-width: 110rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .footerLinks {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .footerLinks {
+    max-width: 100rem;
+  }
+}
+@media (max-width: 55em) {
+  .footerLinks {
+    max-width: 78rem;
+  }
+  .socialLinks {
+    flex-direction: column;
   }
 }

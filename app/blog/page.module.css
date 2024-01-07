@@ -1,4 +1,5 @@
 .blogPage {
-  margin: 20px;
+  max-width: 120rem;
+  margin: 4rem auto;
   display: flex;
 }

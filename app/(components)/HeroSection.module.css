@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 4rem auto 12rem;
+  padding: 0 2rem;
   max-width: 120rem;
   position: relative;
   overflow: hidden;
@@ -167,5 +168,52 @@
 @media (max-width: 84.375em) {
   .landing {
     max-width: 110rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .landing {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .landing {
+    max-width: 100rem;
+  }
+}
+@media (max-width: 55em) {
+  .landing {
+    max-width: 78rem;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .headline {
+    font-size: 6rem;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 43.75em) {
+  .landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .landingContent {
+    align-items: center;
+  }
+  .headline,
+  .subheadline {
+    align-self: center;
+    text-wrap: nowrap;
+  }
+  .btn {
+    font-size: 3rem;
+  }
+  .landingGirls {
+    padding: 6rem;
   }
 }

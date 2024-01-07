@@ -2,6 +2,7 @@
   position: relative;
   max-width: 120rem;
   margin: 5rem auto;
+  padding: 0 2rem;
 }
 
 .carousel {
@@ -72,7 +73,6 @@
   width: 1.2rem;
   border: 1px solid var(--color-brand-800);
   border-radius: 50%;
-  cursor: pointer;
 }
 
 .back {
@@ -84,5 +84,44 @@
 @media (max-width: 84.375em) {
   .carouselSection {
     max-width: 110rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .carouselSection {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .carouselSection {
+    max-width: 100rem;
+  }
+  .girl {
+    height: 25rem;
+    width: 16.675rem;
+  }
+}
+@media (max-width: 55em) {
+  .carouselSection {
+    max-width: 66rem;
+  }
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    gap: 8.6rem;
+  }
+  .girl {
+    height: 40rem;
+    width: 26.68rem;
+  }
+}
+
+@media (max-width: 43.75em) {
+  .girl {
+    height: 35rem;
+    width: 23.345rem;
   }
 }

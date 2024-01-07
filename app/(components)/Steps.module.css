@@ -1,6 +1,7 @@
 .stepsSection {
   max-width: 120rem;
   margin: 16rem auto 8rem;
+  padding: 0 2rem;
 }
 
 .label {
@@ -38,5 +39,25 @@
 @media (max-width: 84.375em) {
   .stepsSection {
     max-width: 110rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .stepsSection {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .stepsSection {
+    max-width: 90rem;
+  }
+}
+@media (max-width: 55em) {
+  .stepsSection {
+    max-width: 78rem;
+  }
+  .steps {
+    grid-template-columns: 1fr 1fr;
   }
 }

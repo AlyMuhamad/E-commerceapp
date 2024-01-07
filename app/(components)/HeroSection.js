@@ -19,7 +19,7 @@ function HeroSection({ scrollToTestimonials }) {
           convenience, and quality meets affordability.
         </p>
         <div className={styles.btns}>
-          <Link href="/" className={`${styles.btn} ${styles.exploreBtn}`}>
+          <Link href="/shop" className={`${styles.btn} ${styles.exploreBtn}`}>
             Explore Now
           </Link>
           <button className={`${styles.btn} ${styles.whyBtn}`} onClick={scroll}>
@@ -31,6 +31,7 @@ function HeroSection({ scrollToTestimonials }) {
         <Image
           src={image}
           alt="a girl"
+          className={styles.landingGirls}
           priority
           sizes="100vw"
           style={{

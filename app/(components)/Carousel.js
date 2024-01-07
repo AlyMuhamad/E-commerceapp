@@ -32,13 +32,13 @@ const carouselData = [
     id: 4,
     image: image4,
     caption:
-      "Our fashion journey is more than just clothing; it's a shared experience with our incredible community. Here's what our customers have to say about their love for our pieces. Real style, real satisfaction. We're proud to showcase the love and confidence our community exudes when wearing our creations. It's not just about fashion; it's about the stories we create together. Join the movement, be part of our community, and experience fashion that resonates with your unique style.",
+      "Our fashion journey is more than just clothing; it's a shared experience with our incredible community. Here's what our customers have to say about their love for our pieces. Real style, real satisfaction. We're proud to showcase the love and confidence our community exudes when wearing our creations. It's not just about fashion; it's about the stories we create together.",
   },
   {
     id: 5,
     image: image5,
     caption:
-      "Indulge in the luxury of limited-time chic with our exclusive offer just for you. Elevate your style and embrace affordability with [percentage]% off your next purchase. Use code 'STYLE15' at checkout to unlock a world of fashion that's both elegant and economical. This is your opportunity to redefine your wardrobe with our latest arrivals, each piece designed to inspire confidence and captivate attention.",
+      "Indulge in the luxury of limited-time chic with our exclusive offer just for you. Elevate your style and embrace affordability with 20% off your next purchase. Use code 'STYLE15' at checkout to unlock a world of fashion that's both elegant and economical. This is your opportunity to redefine your wardrobe, each piece designed to inspire confidence and captivate attention.",
   },
 ];
 
@@ -70,6 +70,7 @@ function Carousel() {
           className={styles.girl}
           priority
         />
+
         <div className={styles.carouselInnerBox}>
           <p>{carouselData[carouselIndex].caption}</p>
         </div>

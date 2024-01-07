@@ -6,7 +6,7 @@
   flex-direction: column;
   gap: 3rem;
   align-items: center;
-  padding: 1.6rem;
+  padding: 2.4rem;
   border-radius: 0.9rem;
 }
 
@@ -84,5 +84,22 @@
 @media (max-width: 84.375em) {
   .CTASection {
     max-width: 110rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .CTASection {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 69.375em) {
+  .CTASection {
+    max-width: 90rem;
+  }
+}
+@media (max-width: 55em) {
+  .CTASection {
+    max-width: 78rem;
   }
 }

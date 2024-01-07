@@ -75,7 +75,7 @@ function Footer() {
           <ul key={link.head} className={styles.linksRow}>
             <li className={styles.headline}>{link.head}</li>
             {link.sublinks.map(sublink => (
-              <li key={sublink.indexOf}>{sublink}</li>
+              <li key={sublink}>{sublink}</li>
             ))}
           </ul>
         ))}
