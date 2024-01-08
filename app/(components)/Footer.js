@@ -8,35 +8,39 @@ import {
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 import { IoLocation } from 'react-icons/io5';
-
 import styles from './Footer.module.css';
+import styled from 'styled-components';
 
-const style = {
-  margin: 'auto',
-  fontSize: '32px',
-  cursor: 'pointer',
-};
+const SocialIcon = styled(FaInstagram)`
+  margin: auto;
+  font-size: 3.2rem;
+  cursor: pointer;
+
+  @media (max-width: 43.75em) {
+    font-size: 2.8rem;
+  }
+`;
 
 const icons = [
   {
     id: 0,
-    icon: <FaInstagram style={style} />,
+    icon: <SocialIcon />,
   },
   {
     id: 1,
-    icon: <FaFacebook style={style} />,
+    icon: <SocialIcon as={FaFacebook} />,
   },
   {
     id: 2,
-    icon: <FaDribbble style={style} />,
+    icon: <SocialIcon as={FaDribbble} />,
   },
   {
     id: 3,
-    icon: <FaYoutube style={style} />,
+    icon: <SocialIcon as={FaYoutube} />,
   },
   {
     id: 4,
-    icon: <FaLinkedinIn style={style} />,
+    icon: <SocialIcon as={FaLinkedinIn} />,
   },
 ];
 

@@ -64,6 +64,8 @@
   width: 2rem;
 }
 
+/* RESPONVIENESs */
+
 @media (max-width: 84.375em) {
   .header {
     max-width: 110rem;
@@ -84,5 +86,14 @@
 @media (max-width: 55em) {
   .header {
     max-width: 78rem;
+  }
+}
+
+@media (max-width: 43.75em) {
+  .header {
+    max-width: 65rem;
+  }
+  .links {
+    gap: 0.5rem;
   }
 }

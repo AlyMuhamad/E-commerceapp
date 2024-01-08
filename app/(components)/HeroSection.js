@@ -10,12 +10,10 @@ function HeroSection({ scrollToTestimonials }) {
   return (
     <div className={styles.landing}>
       <div className={styles.landingContent}>
-        <p className={styles.headline}>
-          Simplify <br /> Everything
-        </p>
+        <p className={styles.headline}>Simplify Everything</p>
         <p className={styles.subheadline}>
-          we believe that shopping should be more than just <br />a transaction;
-          it should be an experience. Step into a world where style meets
+          we believe that shopping should be more than just a transaction; it
+          should be an experience. Step into a world where style meets
           convenience, and quality meets affordability.
         </p>
         <div className={styles.btns}>

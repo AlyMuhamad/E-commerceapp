@@ -1,13 +1,17 @@
 .CTASection {
   max-width: 120rem;
   margin: 6rem auto;
-  background-color: var(--color-brand-500);
+  padding: 0 2rem;
+}
+
+.CTAContent {
+  border-radius: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   align-items: center;
   padding: 2.4rem;
-  border-radius: 0.9rem;
+  background-color: var(--color-brand-500);
 }
 
 .headline {
@@ -102,4 +106,6 @@
   .CTASection {
     max-width: 78rem;
   }
+}
+@media (max-width: 43.5em) {
 }

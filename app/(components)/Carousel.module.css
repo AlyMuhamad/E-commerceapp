@@ -120,8 +120,12 @@
 }
 
 @media (max-width: 43.75em) {
+  .carouselSection {
+    max-width: 60rem;
+  }
+
   .girl {
-    height: 35rem;
-    width: 23.345rem;
+    height: 30rem;
+    width: 20rem;
   }
 }

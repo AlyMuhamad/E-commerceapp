@@ -7,7 +7,7 @@
 .footerLinks {
   max-width: 120rem;
   display: flex;
-  gap: 8rem;
+  gap: 4rem;
   margin: 0 auto;
   padding: 3rem 2rem 10rem;
 }
@@ -128,9 +128,20 @@
 }
 @media (max-width: 55em) {
   .footerLinks {
-    max-width: 78rem;
+    max-width: 80rem;
   }
   .socialLinks {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 43.75em) {
+  .headline {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .headline {
+    font-size: 1.8rem;
   }
 }
