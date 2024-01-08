@@ -16,14 +16,6 @@ function Product() {
 
   const dispatch = useDispatch();
 
-  function handleDescreaseAmount() {
-    if (amount <= 1) return;
-    setAmount(() => amount - 1);
-  }
-  function handleIncreaseAmount() {
-    setAmount(() => amount + 1);
-  }
-
   function handleProduct(productData) {
     setAddedProduct(!addedProduct);
     addedProduct ? dispatch(remove(productData)) : dispatch(add(productData));
@@ -56,25 +48,24 @@ function Product() {
         </div>
         <div>
           <p className={styles.price}>{productData.price} $</p>
-          <p className={styles.productTitle}>{productData.title}</p>
+          <p className={styles.title}>{productData.title}</p>
         </div>
         <div className={styles.purchaseDetails}>
-          <div className={styles.amount}>
-            <button
-              className={styles.amountBtn}
-              onClick={handleDescreaseAmount}
-            >
-              -
-            </button>
-            <div className={styles.amountNum}>{amount}</div>
-            <button
-              className={styles.amountBtn}
-              onClick={() => handleIncreaseAmount()}
-            >
-              +
-            </button>
+          <div className={styles.amountInfo}>
+            <div className={styles.label}>Quantity</div>
+            <div>
+              <input
+                type="number"
+                className={styles.tentacles}
+                name="tentacles"
+                value={amount}
+                onChange={e => setAmount(e.target.value)}
+                min="1"
+                max="20"
+                required
+              />
+            </div>
           </div>
-
           <div className={styles.buttons}>
             <button
               className={styles.addBtn}

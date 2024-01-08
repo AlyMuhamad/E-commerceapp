@@ -1,7 +1,6 @@
 'use client';
 import * as React from 'react';
 import { BsCart3, BsHeart, BsSearch } from 'react-icons/bs';
-import { FaCheckCircle } from 'react-icons/fa';
 import Image from 'next/image';
 import styles from './page.module.css';
 import { useEffect, useState } from 'react';
@@ -94,15 +93,14 @@ function Shop() {
           : productsData
         ).map(product => (
           <li key={product.id} className={styles.product}>
-            <div className={styles.productImage}>
-              <Image
-                src={product.image}
-                alt="a product"
-                height={175}
-                width={175}
-                priority
-              />
-            </div>
+            <Image
+              src={product.image}
+              alt="a product"
+              className={styles.productImage}
+              height={175}
+              width={175}
+              priority
+            />
             <div>
               <p className={styles.price}>{product.price} $</p>
               <Link className={styles.title} href={`shop/${product.id}`}>
