@@ -67,12 +67,11 @@ function Header() {
       <div className={styles.icons}>
         <BsHeart style={favorites} />
         <div className={styles.cart} onClick={() => handleCart()}>
-          {/* {cartProducts.length > 0 ? (
+          {cartProducts.length > 0 ? (
             <div className={styles.productsInCart}>{cartProducts.length}</div>
           ) : (
             ''
-          )} */}
-          <div className={styles.productsInCart}>{cartProducts.length}</div>
+          )}
           <BsCart3 style={style} />
         </div>
         <BsMenuButtonWideFill style={style} />
